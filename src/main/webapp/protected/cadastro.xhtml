@@ -9,47 +9,46 @@
 
         <span class="titulo-pagina">Cadastro de Curso</span>
 
-        <h:form id="form-cadastro">
-            <p:panelGrid id="panel-cadastro" columns="2">
+        <h:form id="form-cadastro" styleClass="form-container">
 
+            <p:panelGrid id="panel-cadastro" columns="2">
                 <p:outputLabel value="Código" for="input-codigo"/>
                 <h:panelGroup>
-                    <p:inputText id="input-codigo" value="#{cadastroBean.curso.codigo}"
-                                 disabled="#{cadastroBean.curso.codigo != null}"/>
+                    <p:inputText id="input-codigo" value="#{cursoBean.curso.codigo}"
+                                 disabled="#{cursoBean.curso.codigo != null}"/>
                     <p:message for="input-codigo" style="font-size: 0.8rem"/>
                 </h:panelGroup>
 
                 <p:outputLabel value="Nome" for="input-nome"/>
                 <h:panelGroup>
-                    <p:inputText id="input-nome" value="#{cadastroBean.curso.nome}"/>
+                    <p:inputText id="input-nome" value="#{cursoBean.curso.nome}"/>
                     <p:message for="input-nome" style="font-size: 0.8rem"/>
                 </h:panelGroup>
 
                 <p:outputLabel value="Data Início" for="input-inicio"/>
                 <h:panelGroup>
-                    <p:datePicker id="input-inicio" value="#{cadastroBean.curso.dataInicio}" pattern="dd/MM/yyyy"/>
+                    <p:datePicker id="input-inicio" value="#{cursoBean.curso.dataInicio}" pattern="dd/MM/yyyy"/>
                     <p:message for="input-inicio" style="font-size: 0.8rem"/>
                 </h:panelGroup>
 
                 <p:outputLabel value="Data Fim" for="input-fim"/>
                 <h:panelGroup>
-                    <p:datePicker id="input-fim" value="#{cadastroBean.curso.dataFim}" pattern="dd/MM/yyyy"/>
+                    <p:datePicker id="input-fim" value="#{cursoBean.curso.dataFim}" pattern="dd/MM/yyyy"/>
                     <p:message for="input-fim" style="font-size: 0.8rem"/>
                 </h:panelGroup>
             </p:panelGrid>
 
             <p:commandButton style="margin: 20px"
-                             value="#{cadastroBean.curso.codigo == null ? 'Cadastrar' : 'Atualizar'}"
-                             action="#{cadastroBean.salvar}"
+                             value="#{cursoBean.curso.codigo == null ? 'Cadastrar' : 'Atualizar'}"
+                             action="#{cursoBean.salvar}"
                              update="panel-cadastro"/>
 
-            <p:commandButton style="margin: 20px"
-                             process="@this"
-                             value="Voltar"
-                             action="#{cadastroBean.voltar}"
-                             update="panel-cadastro"/>
+                        <p:commandButton style="margin: 20px"
+                                         process="@this"
+                                         value="Voltar"
+                                         action="#{cursoBean.voltar}"
+                                         update="panel-cadastro"/>
         </h:form>
-
 
     </ui:define>
 

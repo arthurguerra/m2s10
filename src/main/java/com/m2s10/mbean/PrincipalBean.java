@@ -23,7 +23,7 @@ public class PrincipalBean implements Serializable {
     private List<Curso> cursos = new ArrayList<>();
 
     public void onload() {
-        cursos = cursoRepo.obterCursos();
+        this.cursos = cursoRepo.obter();
     }
 
     public String editar(Curso cursoSelecionado) {
@@ -32,7 +32,7 @@ public class PrincipalBean implements Serializable {
     }
 
     public String remove(Curso curso) {
-        cursoRepo.excluir(curso.getCodigo());
+        cursoRepo.excluir(curso);
         this.cursos = cursoRepo.obterCursos();
         return null;
     }
